@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Adam
+ *
+ */
+module JavaGamePractice {
+}
