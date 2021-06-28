@@ -16,6 +16,16 @@ public class Unit {
 	private double speed;
 	private double strat;
 
+	public Unit(String name, String type, double rarity, double atk, double def, double speed, double strat) {
+		this.name = name;
+		this.type = type;
+		this.rarity = rarity;
+		this.atk = atk;
+		this.def = def;
+		this.speed = speed;
+		this.strat = strat;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}

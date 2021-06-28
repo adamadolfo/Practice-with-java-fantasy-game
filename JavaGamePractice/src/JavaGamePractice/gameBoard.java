@@ -4,24 +4,10 @@ public class gameBoard {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Unit swordSaint = new Unit();
+		Unit swordSaint = new Unit("Sword Saint", "Swordsman", 5, 100, 80, 95, 75);
 		
-		swordSaint.setName("Sword Saint");
-		swordSaint.setType("Swordsman");
-		swordSaint.setRarity(5);
-		swordSaint.setAtk(100);
-		swordSaint.setDef(80);
-		swordSaint.setSpeed(95);
-		swordSaint.setStrat(75);
 		
-		Unit boboTheDragon = new Unit();
-		boboTheDragon.setName("Bobo");
-		boboTheDragon.setType("Dragon");
-		boboTheDragon.setRarity(5);
-		boboTheDragon.setAtk(90);
-		boboTheDragon.setDef(95);
-		boboTheDragon.setSpeed(80);
-		boboTheDragon.setStrat(85);
+		Unit boboTheDragon = new Unit("Bobo", "Dragon", 5, 90, 95, 80, 85);
 		
 		
 		swordSaint.triggerAbillity();
