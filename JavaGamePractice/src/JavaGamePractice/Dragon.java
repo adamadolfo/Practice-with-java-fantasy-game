@@ -24,14 +24,17 @@ public class Dragon extends Unit {
 	public boolean triggerAbillity() {
 		if (super.triggerAbillity()) {
 			System.out.println(getName() + " is triggering its abillity!");
-			System.out.println(getName() + " Attack: " + this.atk + " -> " + this.atk * 1.25);
-			this.atk = this.atk * 1.25;
-			System.out.println(getName() + " Defense: " + this.def + " -> " + this.def * 1.25);
-			this.def = this.def * 1.25;
-			System.out.println(getName() + " Speed: " + this.strat + " -> " + this.strat * 1.25);
-			this.strat = this.strat * 1.25;
+			
+			System.out.println(getName() + " Attack: " + getAtk() + " -> " + getAtk() * 1.25);
+			setAtk(getAtk() * 1.25);
+			System.out.println(getName() + " Defense: " + getDef() + " -> " + getDef() * 1.25);
+			setSpeed(getDef() * 1.25);
+			System.out.println(getName() + " Speed: " + getSpeed() + " -> " + getSpeed() * 1.25);
+			setSpeed(getSpeed() * 1.25);
 		}
-			return super.triggerAbillity();
+		
+		return super.triggerAbillity();
+	
 	}
 
 
