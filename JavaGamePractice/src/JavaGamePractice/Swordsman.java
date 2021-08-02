@@ -1,6 +1,6 @@
 package JavaGamePractice;
 
-public class Swordsman extends Unit {
+public class Swordsman extends Unit implements IEffect {
 	private String name;
 	private double rarity;
 	private double atk;
@@ -8,18 +8,20 @@ public class Swordsman extends Unit {
 	private double speed;
 	private double strat;
 	public String type;
+	public String battleEffect;
+	public String supportEffect;
 	
-	public Swordsman(String name, double rarity, double atk, double def, double speed, double strat) {
-		super(name, rarity, atk, def, speed, strat);
+	public Swordsman(String type, String name, double rarity, double atk, double def, double speed, double strat, String battleEffect, String supportEffect) {
+		super(type, name, rarity, atk, def, speed, strat, battleEffect, supportEffect);
 	}
 	
 	
 
 
 	@Override
-	public boolean triggerAbillity() {
-		if (super.triggerAbillity()) {
-			System.out.println(getName() + " is triggering its abillity!");
+	public boolean triggerBlessing() {
+		if (super.triggerBlessing()) {
+			System.out.println(getName() + " recieves the Swordsman Blessing!");
 			
 			System.out.println(getName() + " Attack: " + getAtk() + " -> " + getAtk() * 1.33);
 			setAtk(getAtk() * 1.33);
@@ -27,8 +29,27 @@ public class Swordsman extends Unit {
 			setSpeed(getSpeed() * 1.33);
 		}
 		
-		return super.triggerAbillity();
+		return super.triggerBlessing();
 	}
+
+
+
+
+	@Override
+	public void battleEffect() {
+		super.battleEffect();
+	}
+
+
+
+
+	@Override
+	public void supportEffect(Unit unit) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
 }
 
 

@@ -5,16 +5,21 @@ import java.util.Random;
 
 public class Battle {
 	private Unit player1;
+	private Unit support1A;
 	private Unit player2;
+	private Unit support1B;
+	
 	
 	private int player1Wins;
 	private int player2Wins;
 	private int numberOfBattles;
 	private ArrayList<String> outcomes;
 	
-	public Battle(Unit player1, Unit player2) {
+	public Battle(Unit player1, Unit support1A, Unit player2, Unit support1B) {
 		this.player1 = player1;
+		this.support1A = support1A;
 		this.player2 = player2;
+		this.support1B = support1B;
 		this.player1Wins = 0;
 		this.player2Wins = 0;
 		this.numberOfBattles = 0;
@@ -37,10 +42,12 @@ public class Battle {
 		if (stat1 > stat2) {
 			player1Wins += 1;
 			System.err.println(player1.getName() + " with " + stat1 + " beat " + player2.getName() + " with " + stat2 + ".");
-		} else {
+		} else if (stat1 < stat2) {
 			player2Wins += 1;
 			System.err.println(player2.getName() + " with " + stat2 + " beat " + player1.getName() + " with " + stat1 + ".");
-			}
+		} else {
+			System.err.println(player2.getName() + " and " + player1.getName() + "tied with " + stat1 + ".");
+		}
 	}
 	
 	private String selectBattleTypeHelper() {
@@ -57,8 +64,12 @@ public class Battle {
 	public void beginBattle() {
 		
 		System.out.println("Battle beginning!");
-		player1.triggerAbillity();
-		player2.triggerAbillity();
+		player1.triggerBlessing();
+		player2.triggerBlessing();
+		player1.battleEffect();
+		player2.battleEffect();
+		support1A.supportEffect(player1);
+		support1B.supportEffect(player2);
 		
 		while (true) {
 			

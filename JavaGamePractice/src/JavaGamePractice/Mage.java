@@ -1,6 +1,6 @@
 package JavaGamePractice;
 
-public class Mage extends Unit {
+public class Mage extends Unit implements IEffect {
 	private String name;
 	private double rarity;
 	private double atk;
@@ -8,15 +8,17 @@ public class Mage extends Unit {
 	private double speed;
 	private double strat;
 	public String type;
+	public String battleEffect;
+	public String supportEffect;
 	
-	public Mage(String name, double rarity, double atk, double def, double speed, double strat) {
-		super(name, rarity, atk, def, speed, strat);
+	public Mage(String type, String name, double rarity, double atk, double def, double speed, double strat, String offenseEffect, String supportEffect) {
+		super(type, name, rarity, atk, def, speed, strat, offenseEffect, supportEffect);
 	}
 
 
 	@Override
-	public boolean triggerAbillity() {
-		if (super.triggerAbillity()) {
+	public boolean triggerBlessing() {
+		if (super.triggerBlessing()) {
 			System.out.println(getName() + " is triggering its abillity!");
 			
 			System.out.println(getName() + " Defense: " + getDef() + " -> " + getDef() * 1.33);
@@ -25,8 +27,24 @@ public class Mage extends Unit {
 			setStrat(getAtk() * 1.33);
 		}
 		
-		return super.triggerAbillity();
+		return super.triggerBlessing();
 	}
+
+
+	@Override
+	public void battleEffect() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void supportEffect(Unit unit) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
 
 
 }
