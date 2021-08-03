@@ -15,7 +15,7 @@ public class Main {
 		
 		Swordsman lifelineBlader = new Swordsman("Swordsan", "Lifeline Blader", 5, 91, 89, 77, 91, "default", "Helping Hilt");
 		
-		Dragon detailDragon = new Dragon("Dragon", "Detail Dragon", 5, 89, 85, 89, 95, "default", "Ancient Preparation");
+		Dragon detailDragon = new Dragon("Dragon", "Detail Dragon", 5, 89, 85, 89, 95, "default", "Ancient Preparations");
 		
 		
 		Battle battle = new Battle(aquatter, lifelineBlader, myst, detailDragon);

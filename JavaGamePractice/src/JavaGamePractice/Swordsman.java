@@ -46,7 +46,7 @@ public class Swordsman extends Unit implements IEffect {
 	@Override
 	public void supportEffect(Unit unit) {
 		// TODO Auto-generated method stub
-		
+		super.supportEffect(unit);
 	}
 	
 

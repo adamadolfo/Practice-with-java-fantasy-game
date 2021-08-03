@@ -123,7 +123,11 @@ public class Unit implements IEffect {
 	@Override
 	public void supportEffect(Unit unit) {
 		// TODO Auto-generated method stub
-		
+		switch (this.supportEffect) {
+		case "Helping Hilt": Effect.helpingHilt(unit);
+		break;
+		case "Ancient Preparations": Effect.ancientPreparations(unit); 
+	}
 	}
 
 

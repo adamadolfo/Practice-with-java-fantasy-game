@@ -64,10 +64,16 @@ public class Battle {
 	public void beginBattle() {
 		
 		System.out.println("Battle beginning!");
-		player1.triggerBlessing();
-		player2.triggerBlessing();
+		
+		System.out.println("Battle Effect Phase!");
 		player1.battleEffect();
 		player2.battleEffect();
+		
+		System.out.println("Blessing Phase!");
+		player1.triggerBlessing();
+		player2.triggerBlessing();
+		
+		System.out.println("Support Effect Phase!");
 		support1A.supportEffect(player1);
 		support1B.supportEffect(player2);
 		

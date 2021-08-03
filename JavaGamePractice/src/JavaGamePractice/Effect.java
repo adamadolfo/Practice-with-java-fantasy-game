@@ -26,7 +26,11 @@ public class Effect {
 				+ unit.getName() + "'s Defense " + unit.getDef() + " -> " + newDef + "! \n" 
 				+ unit.getName() + "'s Speed " + unit.getSpeed() + " -> " + newSpeed + "! \n"
 				+ unit.getName() + "'s Strategy" + unit.getStrat() + " -> " + newStrat + "!");
+		
 		unit.setAtk(newAtk);
+		unit.setDef(newDef);
+		unit.setSpeed(newSpeed);
+		unit.setStrat(newStrat);
 	}
 	
 	// support effects
@@ -38,22 +42,35 @@ public class Effect {
 	}
 	
 	public static void ancientPreparations(Unit unit) {
-		System.out.println("Ancient Preparations activates! \n"
-				+ "Boost defense and strategy!"
+		System.out.println("Ancient Preparations activates! " +  unit.getName() + "has been given the advice of dragons of past.\n"
+				+ "Boost defense and strategy! "
 				+ "If supporting a dragon gain a boost to all stats!");
+		double multiplier = 1.10;
 		if (unit.type == "Dragon") {
-			double multiplier = 1.10;
 			double newAtk = unit.getAtk() * multiplier;
 			double newDef = unit.getDef() * multiplier;
 			double newSpeed = unit.getSpeed() * multiplier;
 			double newStrat = unit.getStrat() * multiplier;
 			
-			System.out.println("Shroud is activated! \n"
-					+ "A thick fog covers the battlefield. " + unit.getName() + "'s senses in the fog sharpen and increase all stats! \n"
-					+ unit.getName() + "'s Attack " + unit.getAtk() + " -> " + newAtk + "! \n"
+			System.out.println( unit.getName() + "'s Attack " + unit.getAtk() + " -> " + newAtk + "! \n"
 					+ unit.getName() + "'s Defense " + unit.getDef() + " -> " + newDef + "! \n" 
 					+ unit.getName() + "'s Speed " + unit.getSpeed() + " -> " + newSpeed + "! \n"
 					+ unit.getName() + "'s Strategy" + unit.getStrat() + " -> " + newStrat + "!");
+			
+			unit.setAtk(newAtk);
+			unit.setDef(newDef);
+			unit.setSpeed(newSpeed);
+			unit.setStrat(newStrat);
+			
+		} else {
+			double newDef = unit.getDef() * multiplier;
+			double newStrat = unit.getStrat() * multiplier;
+			
+			System.out.println( unit.getName() + "'s Defense " + unit.getDef() + " -> " + newDef + "! \n" 
+					+ unit.getName() + "'s Strategy" + unit.getStrat() + " -> " + newStrat + "!");
+			
+			unit.setDef(newDef);
+			unit.setStrat(newStrat);
 		}
 				
 	}
