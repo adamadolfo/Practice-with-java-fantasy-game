@@ -127,8 +127,18 @@ public class Unit implements IEffect {
 		case "Helping Hilt": Effect.helpingHilt(unit);
 		break;
 		case "Ancient Preparations": Effect.ancientPreparations(unit); 
+		}
+		
 	}
+
+
+	@Override
+	public String toString() {
+		return "Unit [name=" + name + ", rarity=" + rarity + ", atk=" + atk + ", def=" + def + ", speed=" + speed
+				+ ", strat=" + strat + ", type=" + type + "]";
 	}
+	
+	
 
 
 

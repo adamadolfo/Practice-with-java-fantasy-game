@@ -51,18 +51,13 @@ public class Battle {
 	}
 	
 	private String selectBattleTypeHelper() {
-	
-	        Random rand = new Random();
-	        String battle = outcomes.get(rand.nextInt(outcomes.size()));
-	        outcomes.remove(battle);
-	        return battle;
-	    
+	    Random rand = new Random();
+	    String battle = outcomes.get(rand.nextInt(outcomes.size()));
+	    outcomes.remove(battle);
+	    return battle;
 	}
 	
-	
-	
-	public void beginBattle() {
-		
+	private void phasesHelper() {
 		System.out.println("Battle beginning!");
 		
 		System.out.println("Battle Effect Phase!");
@@ -76,20 +71,15 @@ public class Battle {
 		System.out.println("Support Effect Phase!");
 		support1A.supportEffect(player1);
 		support1B.supportEffect(player2);
+	}
+	
+	public void beginBattle() {
+		
+		phasesHelper();
+
 		
 		while (true) {
 			
-			if (player1Wins == 3) {
-				System.out.println("*********************************************");
-				System.out.println("The winner is " + player1.getName() + " !");
-				break;
-			}
-			
-			if (player2Wins == 3) {
-				System.out.println("*********************************************");
-				System.out.println("The winner is " + player2.getName()+ "!");
-				break;
-			}
 			
 			numberOfBattles++;
 			System.out.println("*********************************************");
@@ -175,6 +165,17 @@ public class Battle {
 				winTrackHelper(stat1, stat2);
 			}
 			
+			if (player1Wins == 3) {
+				System.out.println("*********************************************");
+				System.out.println("The winner is " + player1.getName() + " !");
+				break;
+			}
+			
+			if (player2Wins == 3) {
+				System.out.println("*********************************************");
+				System.out.println("The winner is " + player2.getName()+ "!");
+				break;
+			}
 			
 		}
 	}
